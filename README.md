@@ -12,6 +12,5 @@ Example: http://kmkeen.com/tmp/df-botanical-terminus.png
 
 Todo:
 
-* fractional alphas
 * document chart.txt format
 

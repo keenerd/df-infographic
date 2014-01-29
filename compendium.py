@@ -17,7 +17,6 @@ or generate custom versions for their tileset and theme
 
 todo:
     animal chart
-    fractional alphas
     don't embed alignments
     robust parsing
     lump the globals into an object
@@ -66,10 +65,16 @@ def colorize(img, foreground, background):
     pix = img.load()
     for x,y in product(*map(range, img.size)):
         p = pix[x,y]
-        if p == (255, 0, 255):
+        if len(p) == 3 and p == (255, 0, 255):
             pix[x,y] = background
-        if p == (255, 255, 255):
+        if len(p) == 3 and p == (255, 255, 255):
             pix[x,y] = foreground
+        if len(p) == 4:
+            a = p[3] / 255
+            r = int(a*(foreground[0] - background[0]) + background[0])
+            g = int(a*(foreground[1] - background[1]) + background[1])
+            b = int(a*(foreground[2] - background[2]) + background[2])
+            pix[x,y] = (r, g, b, 255)
     return img
 
 def load_tileset(img):
@@ -144,6 +149,8 @@ def single_icon(char, fore, back, bright=True, scale=1):
         if back != 'BLACK':
             back = 'DGRAY'
         return single_icon(char, fore, back, bright=True, scale=scale)
+    if char not in tiles:
+        char = ' '
     img = colorize(tiles[char], colors[fore], colors[back])
     if scale == 2:
         return double_size(img)
@@ -239,7 +246,7 @@ def add_title(img, text):
     text = word_icon(text, 'WHITE', 'BLACK', scale=2)
     x,y = img.size
     y += text.size[1]
-    img2 = Image.new('RGB', (x,y), 'BLACK')
+    img2 = Image.new('RGB', (x,y), colors['BLACK'])
     img2.paste(img, (0, text.size[1]))
     img2.paste(text, (x//2 - text.size[0]//2, 0))
     return img2
