@@ -1,0 +1,116 @@
+title: PanTheSatyr's ☼Botanical Compendium☼
+
+cols: Name, Icon, Season, Food, Cloth, Process, Note
+
+subcol: Season, spring summer fall winter
+subcol: Food, raw brew cook
+subcol: Cloth, thread dye
+subcol: Process, workshop quern
+
+row: Underground (available at embark), heading
+row: Plump Helmet, spring summer fall winter raw brew cook underground
+row: Pig Tail, summer fall brew thread workshop underground
+row: Cave Wheat, summer fall brew cook quern underground
+row: Sweet Pod, spring summer brew cook quern underground
+row: Quarry Bush, spring summer fall brew workshop underground
+row: Dimple Cup, spring summer fall winter dye quern underground
+
+row: Wetlands, heading
+row: Muck Root, spring summer fall winter raw brew cook wetlands
+row: Bloated Tuber, spring summer fall winter raw brew cook wetlands
+row: Kobold Bulb, spring summer fall winter workshop wetlands
+
+row: Dry Biomes, heading
+row: Prickle Berry, spring summer fall winter raw brew cook drybiome
+row: Wild Strawberry, spring summer fall winter raw brew cook drybiome
+row: Longland Grass, spring summer fall winter brew cook quern drybiome
+row: Blade Weed, spring summer fall winter dye quern drybiome
+row: Hide Root, spring summer fall winter dye quern drybiome
+
+row: Temperate Grassland, heading
+row: Valley Herb, spring cook workshop temperate
+
+row: Wet Biomes (non-freezing and near water), heading
+row: Rat Weed, spring summer fall winter raw brew cook wetbiome
+row: Fisher Berry, spring summer fall winter raw brew cook wetbiome
+row: Rope Reed, spring summer fall winter brew thread workshop wetbiome
+
+row: Evil Surroundings, heading
+row: Sliver Barb, spring summer fall winter brew dye quern evil
+
+row: Good Surroundings, heading
+row: Sun Berry, spring summer fall winter raw brew cook good
+
+row: Savage Surroundings, heading
+row: Whip Vine, spring summer fall winter brew cook savage
+
+# icons follow "FORE BACK unicode" with either 1 or 9 symbols
+# single symbol icons can have DOUBLE or TRIPLE appended for scaling
+
+icon: spring, GREEN BLACK ♠
+icon: summer, YELLOW BLACK ☼
+icon: fall, RED BLACK ♠
+icon: winter, BROWN BLACK ╞
+icon: raw, BLACK BLACK . BLACK BLACK . BLACK BLACK . WHITE BLACK r WHITE BLACK a WHITE BLACK w BLACK BLACK . BLACK BLACK . BLACK BLACK .
+icon: brew, BLACK BROWN ÷ DOUBLE
+icon: cook, BLACK BROWN ÷ DGRAY LGRAY ░ DGRAY LGRAY ░ BLACK BLACK . BLACK BLACK . DGRAY LGRAY ░ RED BLACK ∞ BLACK BLACK . GREEN BLACK ;
+# find the actual character for thread
+icon: thread, WHITE BLACK φ DOUBLE
+icon: dye, BLACK BLACK . BLACK BLACK . BLACK BLACK . WHITE BLACK d WHITE BLACK y WHITE BLACK e BLACK BLACK . BLACK BLACK . BLACK BLACK .
+icon: workshop, BLACK BLACK . LGRAY BLACK A YELLOW BLACK ≡ BLACK BLACK . BLACK BLACK . BLACK BLACK . LGRAY BLACK O LGRAY BLACK ╥ LCYAN BLACK φ
+icon: quern, WHITE BLACK ○ DOUBLE
+
+# per item icons
+
+icon: Plump Helmet, MAGENTA BLACK ♠ DOUBLE
+icon: Pig Tail, LGRAY BLACK τ DOUBLE
+icon: Cave Wheat, WHITE BLACK τ DOUBLE
+icon: Sweet Pod, RED BLACK Φ DOUBLE
+icon: Quarry Bush, LGRAY BLACK ♣ DOUBLE
+icon: Dimple Cup, BLUE BLACK ♥ DOUBLE
+icon: Muck Root, DGRAY BLACK τ DOUBLE
+icon: Bloated Tuber, BROWN BLACK Φ DOUBLE
+icon: Kobold Bulb, DGRAY BLACK Φ DOUBLE
+icon: Prickle Berry, GREEN BLACK : DOUBLE
+icon: Wild Strawberry, RED BLACK : DOUBLE
+icon: Longland Grass, YELLOW BLACK τ DOUBLE
+icon: Blade Weed, GREEN BLACK τ DOUBLE
+icon: Hide Root, BROWN BLACK τ DOUBLE
+icon: Valley Herb, LGREEN BLACK ÿ DOUBLE
+icon: Rat Weed, GREEN BLACK τ DOUBLE
+icon: Fisher Berry, LGRAY BLACK : DOUBLE
+icon: Rope Reed, GREEN BLACK ƒ DOUBLE
+icon: Sliver Barb, DGRAY BLACK τ DOUBLE
+icon: Sun Berry, YELLOW BLACK : DOUBLE
+icon: Whip Vine, LCYAN BLACK § DOUBLE
+
+# notes
+
+note: Plump Helmet, dwarven wine
+note: Pig Tail, dwarven ale
+note: Cave Wheat, dwarven beer, dwarven flour
+note: Sweet Pod, dwarven rum, dw. suger, dw. syrup
+note: Muck Root, swamp whiskey
+note: Bloated Tuber, tuber beer
+note: Kobold Bulb, gnomeblight
+note: Prickle Berry, prickle berry wine
+note: Wild Strawberry, strawberry wine
+note: Longland Grass, longland beer, longland flour
+note: Valley Herb, golden salve
+note: Rat Weed, sewer brew
+note: Fisher Berry, fisher berry wine
+note: Rope Reed, river spirits
+note: Sliver Barb, gutter cruor
+note: Sun Berry, sunshine
+note: Whip Vine, whip wine, whip vine flour
+
+expand: underground, Underground (available at embark)
+expand: wetlands, Wetlands
+expand: drybiome, Dry Biomes
+expand: temperate, Temperate Grassland
+expand: wetbiome, Wet Biomes (non-freezing and near water)
+expand: evil, Evil Surroundings
+expand: good, Good Surroundings
+expand: savage, Savage Surroundings
+
+
