@@ -65,15 +65,21 @@ def colorize(img, foreground, background):
     pix = img.load()
     for x,y in product(*map(range, img.size)):
         p = pix[x,y]
-        if len(p) == 3 and p == (255, 0, 255):
+        if p == (255, 0, 255):
             pix[x,y] = background
-        if len(p) == 3 and p == (255, 255, 255):
+        if p == (255, 255, 255):
             pix[x,y] = foreground
-        if len(p) == 4:
+        if len(p) == 4 and p[:3] == (255, 255, 255):
             a = p[3] / 255
             r = int(a*(foreground[0] - background[0]) + background[0])
             g = int(a*(foreground[1] - background[1]) + background[1])
             b = int(a*(foreground[2] - background[2]) + background[2])
+            pix[x,y] = (r, g, b, 255)
+        elif len(p) == 4:
+            a = p[3] / 255
+            r = int(a*(p[0] - background[0]) + background[0])
+            g = int(a*(p[1] - background[1]) + background[1])
+            b = int(a*(p[2] - background[2]) + background[2])
             pix[x,y] = (r, g, b, 255)
     return img
 
@@ -90,6 +96,7 @@ def load_tileset(img):
     for y,x in product(range(0, size[1], h), range(0, size[0], w)):
         c = tile_unicode[y//h*16 + x//w]
         tiles[c] = img.crop((x, y, x+w, y+h))
+    tiles['empty'] = Image.new('RGB', (w, h), (255,0,255))
     return tiles
 
 def load_colors(color_path):
@@ -150,7 +157,7 @@ def single_icon(char, fore, back, bright=True, scale=1):
             back = 'DGRAY'
         return single_icon(char, fore, back, bright=True, scale=scale)
     if char not in tiles:
-        char = ' '
+        char = 'empty'
     img = colorize(tiles[char], colors[fore], colors[back])
     if scale == 2:
         return double_size(img)
