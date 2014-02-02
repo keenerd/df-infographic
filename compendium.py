@@ -16,15 +16,18 @@ made so that people could easily fix and extend the data
 or generate custom versions for their tileset and theme
 
 todo:
-    animal chart
     don't embed alignments
     robust parsing
     lump the globals into an object
     bitmap memoization for speed
+    force_color CLI option
 """
 
 tile_unicode = """ ☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ """
 
+# forcing color will tint any shade of gray
+# useful for graphics packs
+force_color = False
 
 def dictify(data_list, setify=False, listify=False):
     data2 = {}
@@ -69,6 +72,13 @@ def colorize(img, foreground, background):
             pix[x,y] = background
         if p == (255, 255, 255):
             pix[x,y] = foreground
+        if force_color and p[0] == p[1] == p[2]:
+            a = p[0] / 255
+            r = int(a*(foreground[0] - background[0]) + background[0])
+            g = int(a*(foreground[1] - background[1]) + background[1])
+            b = int(a*(foreground[2] - background[2]) + background[2])
+            pix[x,y] = (r, g, b, 255)
+            continue
         if len(p) == 4 and p[:3] == (255, 255, 255):
             a = p[3] / 255
             r = int(a*(foreground[0] - background[0]) + background[0])
@@ -224,7 +234,22 @@ def row_icon(name):
             continue
         sub_icons = []
         for scol in data['subcol'][col]:
+            if scol == 'ICON':
+                continue
+            if scol == 'HIDE':
+                continue
             bright = scol in tags
+            if '_INFO' in scol:
+                prefix = scol[:-(len('INFO'))]
+                value = [t for t in tags if t.startswith(prefix)]
+                if value:
+                    value = value[0][len(prefix):]
+                else:
+                    value = '□'
+                if value == '0':
+                    value = '□'
+                sub_icons.append(word_icon(value, 'WHITE', 'BLACK'))
+                continue
             if len(data['icon'][scol]) == 27:
                 sub_icons.append(large_icon(data['icon'][scol], bright=bright))
                 continue
@@ -251,11 +276,12 @@ def in_a_row(imgs):
 
 def add_title(img, text):
     text = word_icon(text, 'WHITE', 'BLACK', scale=2)
+    padding = text.size[1] // 4
     x,y = img.size
-    y += text.size[1]
+    y += text.size[1] + padding
     img2 = Image.new('RGB', (x,y), colors['BLACK'])
-    img2.paste(img, (0, text.size[1]))
-    img2.paste(text, (x//2 - text.size[0]//2, 0))
+    img2.paste(img, (0, text.size[1] + padding))
+    img2.paste(text, (x//2 - text.size[0]//2, padding))
     return img2
 
 def find_widths(subgrid):
@@ -375,13 +401,19 @@ if __name__ == '__main__':
     subgrid = []
     labels = []
     for col in data['cols']:
-        if col in ['Icon', 'Note']:
-            col = ' '
+        if col in data['subcol']:
+            if 'ICON' in data['subcol'][col]:
+                f,b,c,s = parse_single_icon(data['icon'][col])
+                labels.append(single_icon(c, f, b, scale=s))
+                #labels.append(in_a_row(....))
+                continue
+            if 'HIDE' in data['subcol'][col]:
+                col = ' '
         word = word_icon(col, 'LGRAY', 'BLACK', scale=1)
         labels.append(in_a_row([word]))
     subgrid.append(labels)
     for name in data['order']:
-        if 'heading' in data['row'][name]:
+        if 'HEADING' in data['row'][name]:
             #name = ' '.join(list(name))
             word = word_icon(name, 'DGRAY', 'BLACK', scale=2)
             subgrid.append([in_a_row([word])])

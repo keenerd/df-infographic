@@ -2,12 +2,14 @@ title: PanTheSatyr's ☼Botanical Compendium☼
 
 cols: Name, Icon, Season, Food, Cloth, Process, Note
 
+subcol: Icon, HIDE
 subcol: Season, spring summer fall winter
 subcol: Food, raw brew cook
 subcol: Cloth, thread dye
 subcol: Process, workshop quern
+subcol: Note, HIDE LEFT
 
-row: Underground (available at embark), heading
+row: Underground (available at embark), HEADING
 row: Plump Helmet, spring summer fall winter raw brew cook underground
 row: Pig Tail, summer fall brew thread workshop underground
 row: Cave Wheat, summer fall brew cook quern underground
@@ -15,33 +17,33 @@ row: Sweet Pod, spring summer brew cook quern underground
 row: Quarry Bush, spring summer fall brew workshop underground
 row: Dimple Cup, spring summer fall winter dye quern underground
 
-row: Wetlands, heading
+row: Wetlands, HEADING
 row: Muck Root, spring summer fall winter raw brew cook wetlands
 row: Bloated Tuber, spring summer fall winter raw brew cook wetlands
 row: Kobold Bulb, spring summer fall winter workshop wetlands
 
-row: Dry Biomes, heading
+row: Dry Biomes, HEADING
 row: Prickle Berry, spring summer fall winter raw brew cook drybiome
 row: Wild Strawberry, spring summer fall winter raw brew cook drybiome
 row: Longland Grass, spring summer fall winter brew cook quern drybiome
 row: Blade Weed, spring summer fall winter dye quern drybiome
 row: Hide Root, spring summer fall winter dye quern drybiome
 
-row: Temperate Grassland, heading
+row: Temperate Grassland, HEADING
 row: Valley Herb, spring cook workshop temperate
 
-row: Wet Biomes (non-freezing and near water), heading
+row: Wet Biomes (non-freezing and near water), HEADING
 row: Rat Weed, spring summer fall winter raw brew cook wetbiome
 row: Fisher Berry, spring summer fall winter raw brew cook wetbiome
 row: Rope Reed, spring summer fall winter brew thread workshop wetbiome
 
-row: Evil Surroundings, heading
+row: Evil Surroundings, HEADING
 row: Sliver Barb, spring summer fall winter brew dye quern evil
 
-row: Good Surroundings, heading
+row: Good Surroundings, HEADING
 row: Sun Berry, spring summer fall winter raw brew cook good
 
-row: Savage Surroundings, heading
+row: Savage Surroundings, HEADING
 row: Whip Vine, spring summer fall winter brew cook savage
 
 # icons follow "FORE BACK unicode" with either 1 or 9 symbols

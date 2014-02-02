@@ -6,11 +6,11 @@ Needs a [tileset](http://dwarffortresswiki.org/index.php/Tileset_repository) and
 
 To use:
 
-    python3 compendium.py chart.txt tileset.png colors.txt chart.png
+    python3 compendium.py bontanical.txt tileset.png colors.txt chart.png
 
 Example: http://kmkeen.com/tmp/df-botanical-terminus.png
 
 Todo:
 
-* document chart.txt format
+* document chart text format
 

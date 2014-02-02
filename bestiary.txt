@@ -1,0 +1,100 @@
+title: Domestic Bestiary
+
+# ◘ ° for egg?
+# ░ for pasture?
+# white ² bones, dgray ² horns
+# º cloth, red α meat, purple α organs, yellow ≈ fat
+
+cols: Name, Icon, Pasture, Meat, Bones, Horn, Eggs, Makes, Note
+
+subcol: Name, LEFT HIDE
+subcol: Icon, HIDE
+subcol: Pasture, pasture_INFO ICON
+subcol: Meat, edible_INFO ICON
+subcol: Bones, bones_INFO ICON
+subcol: Horn, horn_INFO ICON
+subcol: Makes, milk yarn HIDE
+subcol: Eggs, eggs_INFO ICON
+subcol: Note, HIDE LEFT
+
+# column icons
+icon: Pasture, GREEN BLACK ░ DOUBLE
+icon: Meat, RED BLACK α DOUBLE
+icon: Bones, WHITE BLACK ² DOUBLE
+icon: Horn, DGRAY BLACK ² DOUBLE
+icon: Eggs, BROWN BLACK ◘ DOUBLE 
+
+# info icons
+icon: milk, BLACK BROWN ÷ DOUBLE
+icon: yarn, WHITE BLACK φ DOUBLE
+
+row: Poultry, HEADING
+row: Blue Peafowl, eggs_6-8 edible_17 bones_6 skull rawhide
+row: Chicken, eggs_4-15 edible_13 bones_4 skull rawhide
+row: Duck, eggs_8-13 edible_0 bones_0 skull
+row: Goose, eggs_3-8 edible_17 bones_6 skull rawhide flying
+row: Guineafowl, eggs_4-15 edible_2 bones_0 skull
+row: Turkey, eggs_10-14 edible_19 bones_6 skull rawhide
+
+row: Grazer, HEADING
+row: Alpaca, edible_35 bones_16 horn_0 milk yarn pasture_5x5 skull rawhide
+row: Cavy, edible_0 bones_0 horn_0 pasture_1x1 skull
+row: Cow, edible_37 bones_15 horn_6 milk pasture_14x14 skull rawhide
+row: Donkey, edible_30 bones_13 horn_4 milk pasture_10x10 skull rawhide
+row: Goat, edible_27 bones_10 horn_6 milk pasture_4x4 skull rawhide
+row: Horse, edible_32 bones_13 horn_4 milk pasture_13x13 skull rawhide
+row: Llama, edible_36 bones_18 horn_0 milk yarn pasture_8x8 skull rawhide
+row: Mule, edible_34 bones_13 horn_4 sterile pasture_12x12 skull rawhide
+row: Sheep, edible_27 bones_8/10 horn_4/6 milk yarn pasture_4x4 skull rawhide
+row: Rabbit, edible_0 bones_0 horn_0 pasture_1x1 skull
+row: Reindeer, edible_28 bones_16 horn_6 milk pasture_7x7 skull rawhide
+row: Water Buffalo, edible_70 bones_20 horn_6 milk pasture_18x18 skull rawhide
+row: Yak, edible_42 bones_16 horn_6 milk pasture_16x16 skull rawhide
+
+row: Non-Grazer, HEADING
+row: Cat, edible_14 bones_4 horn_0 skull rawhide
+row: Dog, edible_37 bones_11 horn_0 skull rawhide
+row: Pig, edible_17 bones_8 horn_4 milk skull rawhide
+
+# animal icons
+
+icon: Dog, BROWN BLACK d DOUBLE
+icon: Goat, BROWN BLACK g DOUBLE
+icon: Turkey, LRED BLACK t DOUBLE
+icon: Guineafowl, DGRAY BLACK g DOUBLE
+icon: Pig, LMAGENTA BLACK p DOUBLE
+icon: Llama, WHITE BLACK L DOUBLE
+icon: Sheep, WHITE BLACK s DOUBLE
+icon: Water Buffalo, DGRAY BLACK W DOUBLE
+icon: Duck, GREEN BLACK d DOUBLE
+icon: Donkey, BROWN BLACK D DOUBLE
+icon: Goose, WHITE BLACK g DOUBLE
+icon: Reindeer, BROWN BLACK R DOUBLE
+icon: Yak, BROWN BLACK Y DOUBLE
+icon: Alpaca, WHITE BLACK a DOUBLE
+icon: Blue Peafowl, LBLUE BLACK p DOUBLE
+icon: Cat, DGRAY BLACK c DOUBLE
+icon: Rabbit, BROWN BLACK r DOUBLE
+icon: Cow, BROWN BLACK C DOUBLE
+icon: Chicken, BROWN BLACK c DOUBLE
+icon: Cavy, LGRAY BLACK c DOUBLE
+icon: Horse, LGRAY BLACK H DOUBLE
+icon: Mule, LGRAY BLACK M DOUBLE
+
+note: Cavy, No leather.  Tropical shrubland/savanna/grassland.
+note: Horse, Found in temperate grassland/savanna.
+note: Mule, Cannot be bred.
+note: Rabbit, No leather.  Tropical shrubland/savanna/grassland.
+note: Reindeer, Found in tundra/tiaga.
+note: Sheep, Rams have +2 bones/hooves.
+note: Water Buffalo, Found in tropical wetland.
+note: Yak, Found in mountains.
+
+note: Dog, Train into war or hunting dogs.
+
+note: Blue Peafowl, Found in tropical forest.
+note: Duck, No leather.  Found in temperate lake/wetland.
+note: Goose, Flies.  Found in temperate lake/marsh.
+note: Guineafowl, No leather.
+note: Turkey, Found in temperate shrubland/forest/swamp.
+
